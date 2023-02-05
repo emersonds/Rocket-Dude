@@ -36,8 +36,6 @@ public class PlayerController : MonoBehaviour
     {
         rb2d.AddForce(new Vector2(Input.GetAxisRaw("Horizontal"), 0f) * stats.MoveSpeed, ForceMode2D.Impulse);
 
-        Debug.Log($"Velocity: {rb2d.velocity.x}");
-
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);

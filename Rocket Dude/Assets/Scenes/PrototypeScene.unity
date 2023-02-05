@@ -939,10 +939,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1201469866, guid: 9f6268135df54c146ac9c805e50b685f, type: 3}
-      propertyPath: moveSpeed
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 630956626869960404, guid: 9f6268135df54c146ac9c805e50b685f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -991,13 +987,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 630956626869960411, guid: 9f6268135df54c146ac9c805e50b685f, type: 3}
-      propertyPath: m_LinearDrag
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 630956626869960411, guid: 9f6268135df54c146ac9c805e50b685f, type: 3}
-      propertyPath: m_Constraints
-      value: 4
+    - target: {fileID: 4635201183894428907, guid: 9f6268135df54c146ac9c805e50b685f, type: 3}
+      propertyPath: angleCorrection
+      value: 135
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f6268135df54c146ac9c805e50b685f, type: 3}
