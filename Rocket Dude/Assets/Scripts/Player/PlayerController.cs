@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    #region Fields
+
+    private bool canJump = true;    // If the player can jump
+    private bool grounded = true;   // If the player is on ground
+
+    #endregion
+
     #region Components
 
     // These are components attached to the player object
@@ -48,6 +55,20 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        if (Input.GetKeyDown(KeyCode.Space) && canJump && grounded)
+        {
+            Debug.Log("Jump!");
 
+            rb2d.AddForce(new Vector2(0f, 1f) * stats.JumpForce, ForceMode2D.Impulse);
+
+            StartCoroutine(JumpCooldown());
+        }
+    }
+
+    private IEnumerator JumpCooldown()
+    {
+        canJump = false;
+        yield return new WaitForSeconds(0.7f);
+        canJump = true;
     }
 }
