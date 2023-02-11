@@ -50,13 +50,13 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 3
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: df310daaf004a664a85e9747c081fbc1, type: 2}
+  m_GravityScale: 3
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &630956626869960405
 CapsuleCollider2D:
@@ -67,7 +67,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 630956626869960410}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: df310daaf004a664a85e9747c081fbc1, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839be66210dce184885509dceca39103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.6
-  jumpForce: 0.3
+  moveSpeed: 1.1
+  jumpForce: 7
 --- !u!1 &630956627893345072
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c67588a778126fe41a91354d617b0d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angleCorrection: 135
 --- !u!1 &630956628397639045
 GameObject:
   m_ObjectHideFlags: 0

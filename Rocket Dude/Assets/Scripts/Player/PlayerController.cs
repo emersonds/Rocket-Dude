@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     private bool canJump = true;    // If the player can jump
     private bool grounded = true;   // If the player is on ground
 
+    private float hInput = 0f;      // Where the player is moving
+
     #endregion
 
     #region Components
@@ -31,6 +33,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        hInput = Input.GetAxisRaw("Horizontal") * stats.MoveSpeed;
+
         Jump();
     }
 
@@ -41,16 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        rb2d.AddForce(new Vector2(Input.GetAxisRaw("Horizontal"), 0f) * stats.MoveSpeed, ForceMode2D.Impulse);
-
-        if (Input.GetAxisRaw("Horizontal") > 0)
-        {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-        }
-        else if (Input.GetAxisRaw("Horizontal") < 0)
-        {
-            transform.localScale = Vector3.one;
-        }
+        rb2d.AddForce(new Vector2(hInput, 0f), ForceMode2D.Impulse);
     }
 
     private void Jump()
