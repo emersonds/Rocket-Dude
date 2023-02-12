@@ -10,11 +10,15 @@ public class RocketController : MonoBehaviour
 
     private bool flipped;
 
+    private bool canShoot = true;
+
     private Vector2 mousePos;
 
     private float angleRad;
 
     private float angleDeg;
+
+    private WaitForSeconds shootCooldownTime = new WaitForSeconds(0.75f);
 
     private Vector2 shoulderPoint;
     private Vector2 shoulderPointFlipped;
@@ -38,6 +42,9 @@ public class RocketController : MonoBehaviour
         FollowMouse();
     }
 
+    /// <summary>
+    /// Rotates and flips the rocket based on mouse position.
+    /// </summary>
     private void FollowMouse()
     {
         //  Get mouse position in world space
@@ -73,5 +80,21 @@ public class RocketController : MonoBehaviour
         {
             transform.localPosition = shoulderPoint;
         }
+    }
+
+    public void Shoot()
+    {
+        if (canShoot)
+        {
+            Debug.Log($"Shoot!");
+            StartCoroutine(ShootCooldown());
+        }
+    }
+
+    private IEnumerator ShootCooldown()
+    {
+        canShoot = false;
+        yield return shootCooldownTime;
+        canShoot = true;
     }
 }

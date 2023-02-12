@@ -43,14 +43,32 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        // Track player input
+        GetInput();
+
+        // Fall when not grounded
+        Fall();
+    }
+
+    /// <summary>
+    /// Handles all inputs to trigger actions when required.
+    /// </summary>
+    private void GetInput()
+    {
         // Get horizontal input
         hInput = Input.GetAxisRaw("Horizontal") * stats.MoveSpeed;
 
         // Get jump input
-        Jump();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
 
-        // Fall when not grounded
-        Fall();
+        // Get shoot input
+        if (Input.GetMouseButtonDown(0))
+        {
+            GetComponentInChildren<RocketController>().Shoot();
+        }
     }
 
     // FixedUpdate is called every fixed framerate frame, used for calculating physics.
@@ -75,12 +93,12 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         // Player is grounded and can jump
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (IsGrounded())
         {
             rb2d.AddForce(new Vector2(0f, 1f) * stats.JumpForce, ForceMode2D.Impulse);
         }
         // Player is not grounded, but is provided a grace period for more consistent jumps.
-        else if (Input.GetKeyDown(KeyCode.Space) && !IsGrounded())
+        else
         {
             StartCoroutine(JumpSaver(jumpSaverTime));
         }
@@ -97,6 +115,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks if the player is grounded by casting a box at their feet and checking for collision.
+    /// </summary>
+    /// <returns></returns>
     private bool IsGrounded()
     {
         // Casts a box at the player's feet to determine if they are colliding with ground
