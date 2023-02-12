@@ -49,8 +49,6 @@ public class RocketController : MonoBehaviour
         // Convert angle to degrees, correct angle for rocket launcher angle
         angleDeg = ((180 / Mathf.PI) * angleRad) - ANGLE_CORRECTION;
 
-        Debug.Log($"angleDeg: {angleDeg}");
-
         if (angleDeg < -60f && angleDeg > -220f)
         {
             angleDeg += ANGLE_CORRECTION_FLIPPED;

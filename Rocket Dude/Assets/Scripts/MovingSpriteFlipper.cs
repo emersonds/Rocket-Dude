@@ -11,22 +11,28 @@ public class MovingSpriteFlipper : MonoBehaviour
     private SpriteRenderer sr;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        // Assign component references
         sr = GetComponent<SpriteRenderer>();
         rb2dParent = GetComponentInParent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Flip();
     }
 
+    /// <summary>
+    /// Flips the sprite horizontally depending on horizontal movement.
+    /// </summary>
     private void Flip()
     {
+        // Confirm the parent object has a RigidBody2D component
         if (rb2dParent != null)
         {
+            // Flip according to horizontal velocity.
             if (rb2dParent.velocity.x > 0f)
             {
                 sr.flipX = true;
