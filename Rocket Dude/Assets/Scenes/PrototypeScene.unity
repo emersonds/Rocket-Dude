@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 404775872}
   - component: {fileID: 404775871}
   - component: {fileID: 404775870}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 997474961}
   - component: {fileID: 997474960}
   - component: {fileID: 997474959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_HighMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 1422958308}
   - component: {fileID: 1422958307}
   - component: {fileID: 1422958306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_LowRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 1445407399}
   - component: {fileID: 1445407398}
   - component: {fileID: 1445407397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_MiddleLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -807,7 +807,7 @@ GameObject:
   - component: {fileID: 1549460321}
   - component: {fileID: 1549460320}
   - component: {fileID: 1549460319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: World
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -823,7 +823,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 1549460318}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 70b5f8572fc9f4240b3e3ad3d914b817, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -973,7 +973,7 @@ GameObject:
   - component: {fileID: 1595655993}
   - component: {fileID: 1595655992}
   - component: {fileID: 1595655991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1084,7 +1084,7 @@ GameObject:
   - component: {fileID: 1980764057}
   - component: {fileID: 1980764056}
   - component: {fileID: 1980764055}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_HighRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1191,14 +1191,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1201469866, guid: 9f6268135df54c146ac9c805e50b685f, type: 3}
-      propertyPath: jumpForce
-      value: 19.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 1201469866, guid: 9f6268135df54c146ac9c805e50b685f, type: 3}
-      propertyPath: moveSpeed
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 630956626869960404, guid: 9f6268135df54c146ac9c805e50b685f, type: 3}
       propertyPath: m_RootOrder
       value: 3
