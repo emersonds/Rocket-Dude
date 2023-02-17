@@ -12,8 +12,7 @@ public class Missile : MonoBehaviour
 
     private Collider2D[] inExplosionRadius = null;
 
-    [SerializeField]
-    private float explosiveForceMultiplier = 1000f;
+    private float explosiveForceMultiplier = 50f;
     private float explosionRadius = 5f;
 
     /// <summary>
@@ -44,7 +43,7 @@ public class Missile : MonoBehaviour
                 // Check greater than 0 to prevent NaN error (divide by 0)
                 if (distance.magnitude > 0)
                 {
-                    float explosiveForce = explosiveForceMultiplier / distance.magnitude;
+                    float explosiveForce = Mathf.Clamp(explosiveForceMultiplier / (2 * distance.magnitude), 25f, 60f);
                     collRb2d.AddForce(distance.normalized * explosiveForce, ForceMode2D.Impulse);
 
                     Debug.Log($"Obj: {coll.name}\nMagn: {distance.magnitude}\nexplforce: {explosiveForce}\nAddForceForce: {distance.normalized * explosiveForce}");

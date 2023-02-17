@@ -18,7 +18,7 @@ public class RocketController : MonoBehaviour
 
     private float angleDeg;
 
-    private WaitForSeconds shootCooldownTime = new WaitForSeconds(0.75f);
+    private WaitForSeconds shootCooldownTime = new WaitForSeconds(0.4f);
 
     private Vector2 shoulderPoint;
     private Vector2 shoulderPointFlipped;
